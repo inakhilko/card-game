@@ -1,0 +1,132 @@
+html {
+    font-size: 24px;
+}
+
+:root {
+    --gap-card: 1rem;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FFFACD;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+    height: 80vh;
+    gap: var(--gap-card);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-grow: 1;
+    gap: var(--gap-card);
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    position: relative;
+    perspective: 1000px;
+}
+
+.form {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input {
+    background-color: #FFFFE0;
+    margin-right: 20px;
+    height: 62px;
+    border: #D2691E 1px solid;
+    border-radius: 15px;
+}
+
+.btn {
+    font-size: 2rem;
+    background-color: #F4A460;
+    border: #D2691E 1px solid;
+    border-radius: 15px;
+    padding: 12px;
+    max-width: 49%;
+}
+
+.back, .front {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+transition: all 1s ease-in-out;
+
+}
+
+.back {
+    background-color: royalblue;
+}
+
+.front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: cornflowerblue;
+    font-size: 3rem;
+    font-weight: bold;
+    transform: rotateY(180deg);
+}
+
+div.card--opened .front {
+    transform: rotateY(360deg);
+}
+
+div.card--opened .back {
+    transform: rotateY(180deg);
+}
+
+.done .front {
+    background-color: green;
+}
+
+.failed .front {
+    background-color: red;
+}
+
+.buttons {
+    display: flex;
+    gap: var(--gap-card);
+}
+
+.buttons .btn {
+    flex-grow: 1;
+}
+
+.time-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media all and (max-height: 500px) {
+html{
+    font-size: 8px;
+}
+}
