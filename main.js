@@ -78,7 +78,7 @@ function startGame(count) {
   const timeContainer = document.createElement("div");
   timeContainer.classList.add("time-container");
   square.append(timeContainer);
-  let timeInSeconds = 15;
+  let timeInSeconds = 60;
   const timer = () => {
     const timeContainer = document.querySelector(".time-container");
     let minutes = Math.trunc(timeInSeconds / 60)
