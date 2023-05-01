@@ -1,132 +1,152 @@
 html {
-    font-size: 24px;
+  font-size: 2vw;
 }
 
 :root {
-    --gap-card: 1rem;
+  --gap-card: 1rem;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 main {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #FFFACD;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fffacd;
 }
 
 .root {
-    display: flex;
-    flex-direction: column;
-    width: 80vh;
-    height: 80vh;
-    gap: var(--gap-card);
-    padding: 10px;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 80vh;
+  gap: var(--gap-card);
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .row {
-    display: flex;
-    flex-grow: 1;
-    gap: var(--gap-card);
+  display: flex;
+  flex-grow: 1;
+  gap: var(--gap-card);
 }
 
 .card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    position: relative;
-    perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  position: relative;
+  perspective: 1000px;
 }
 
 .form {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-card);
 }
 
 .input {
-    background-color: #FFFFE0;
-    margin-right: 20px;
-    height: 62px;
-    border: #D2691E 1px solid;
-    border-radius: 15px;
+  background-color: #ffffe0;
+  width: 80%;
+  padding: 20px;
+  font-size: 2rem;
+  height: 62px;
+  border: #d2691e 1px solid;
+  border-radius: 15px;
+  text-align: center;
+}
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .btn {
-    font-size: 2rem;
-    background-color: #F4A460;
-    border: #D2691E 1px solid;
-    border-radius: 15px;
-    padding: 12px;
-    max-width: 49%;
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: #f4a460;
+  border: #d2691e 1px solid;
+  border-radius: 15px;
+  padding: 12px;
+  max-width: 49%;
+  text-decoration: none;
+  color: #61310e;
 }
 
-.back, .front {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-transition: all 1s ease-in-out;
-
+.back,
+.front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: all 1s ease-in-out;
 }
 
 .back {
-    background-color: royalblue;
+  background-color: royalblue;
 }
 
 .front {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: cornflowerblue;
-    font-size: 3rem;
-    font-weight: bold;
-    transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: cornflowerblue;
+  font-size: 3rem;
+  font-weight: bold;
+  transform: rotateY(180deg);
 }
 
 div.card--opened .front {
-    transform: rotateY(360deg);
+  transform: rotateY(360deg);
 }
 
 div.card--opened .back {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .done .front {
-    background-color: green;
+  background-color: green;
 }
 
 .failed .front {
-    background-color: red;
+  background-color: red;
 }
 
 .buttons {
-    display: flex;
-    gap: var(--gap-card);
+  display: flex;
+  gap: var(--gap-card);
 }
 
 .buttons .btn {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .time-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  border: #d2691e 1px solid;
+  border-radius: 50px;
+  -webkit-box-shadow: 14px 15px 41px 26px rgba(34, 60, 80, 0.16);
+  -moz-box-shadow: 14px 15px 41px 26px rgba(34, 60, 80, 0.16);
+  box-shadow: 14px 15px 41px 26px rgba(34, 60, 80, 0.16);
 }
 
 @media all and (max-height: 500px) {
-html{
-    font-size: 8px;
-}
+  html {
+    font-size: 1.5vw;
+  }
 }

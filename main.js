@@ -27,7 +27,8 @@ function formCreator() {
   form.classList.add("form");
   const input = document.createElement("input");
   input.classList.add("input");
-  input.setAttribute("type", "number");
+  input.type = "number";
+  input.placeholder = "Введите четное число";
   const btn = document.createElement("button");
   btn.innerHTML = "Начать игру";
   btn.classList.add("btn");
@@ -35,14 +36,14 @@ function formCreator() {
   form.append(btn);
   container.innerHTML = "";
   container.append(form);
-  btn.addEventListener("click", (event) => {
+  form.onsubmit = (event) => {
     event.preventDefault();
     if (input.value >= 2 && input.value <= 10 && input.value % 2 === 0) {
       startGame(input.value);
     } else {
       startGame(4);
     }
-  });
+  };
 }
 
 function buttonsCreator(count) {
@@ -56,7 +57,7 @@ function buttonsCreator(count) {
   btnNewGame.innerHTML = "Поменять поле";
   buttons.append(btnAgain);
   buttons.append(btnNewGame);
-  const square = document.querySelector('.root');
+  const square = document.querySelector(".root");
   square.append(buttons);
   btnAgain.addEventListener("click", (event) => {
     startGame(count);
@@ -89,12 +90,11 @@ function startGame(count) {
       clearInterval(id);
       buttonsCreator(count);
       isClick = false;
-      const cards = document.querySelectorAll('.card');
+      const cards = document.querySelectorAll(".card");
       for (let card of cards) {
-        card.classList.add('card--opened');
-      card.classList.add('failed');
+        card.classList.add("card--opened");
+        card.classList.add("failed");
       }
-      
     } else {
       let strTimer = `${minutes}:${seconds}`;
       timeContainer.innerHTML = strTimer;
