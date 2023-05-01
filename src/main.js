@@ -68,6 +68,7 @@ function startGame(count) {
   let firstChosen = null;
   let isClick = true;
   let doneCards = 0;
+  let isTimeOut = false;
 
   const cardsArr = shuffle(createNumbersArray(count));
 
@@ -76,7 +77,7 @@ function startGame(count) {
   const timeContainer = document.createElement("div");
   timeContainer.classList.add("time-container");
   square.append(timeContainer);
-  let timeInSeconds = 60;
+  let timeInSeconds = 10;
   const timer = () => {
     const timeContainer = document.querySelector(".time-container");
     let minutes = Math.trunc(timeInSeconds / 60)
@@ -86,6 +87,7 @@ function startGame(count) {
     if (timeInSeconds < 0) {
       clearInterval(id);
       buttonsCreator(count);
+      isTimeOut = true;
       isClick = false;
       const cards = document.querySelectorAll(".card");
       for (let card of cards) {
@@ -133,11 +135,13 @@ function startGame(count) {
           const secondChosen = event.currentTarget;
           isClick = false;
           setTimeout(() => {
+            if (isTimeOut) return;
             if (firstChosen.value === value) {
               firstChosen.element.classList.add("done");
               secondChosen.classList.add("done");
               doneCards += 2;
               if (doneCards === count * count) {
+                clearInterval(id);
                 buttonsCreator(count);
               }
               secondChosen.removeEventListener("click", click);

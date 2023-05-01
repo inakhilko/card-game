@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
-const PrettierPlugin = require("webpack-prettier-plugin");
 
 module.exports = {
   entry: "./src/main.js",
@@ -40,7 +39,6 @@ module.exports = {
   },
   devtool: "source-map",
   plugins: [
-    new PrettierPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),

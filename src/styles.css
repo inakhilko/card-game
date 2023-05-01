@@ -116,12 +116,12 @@ div.card--opened .back {
   transform: rotateY(180deg);
 }
 
-.done .front {
-  background-color: green;
-}
-
 .failed .front {
   background-color: red;
+}
+
+.done .front {
+  background-color: green;
 }
 
 .buttons {
