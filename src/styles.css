@@ -1,5 +1,5 @@
 html {
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 
 :root {
@@ -143,10 +143,4 @@ div.card--opened .back {
   -webkit-box-shadow: 14px 15px 41px 26px rgba(34, 60, 80, 0.16);
   -moz-box-shadow: 14px 15px 41px 26px rgba(34, 60, 80, 0.16);
   box-shadow: 14px 15px 41px 26px rgba(34, 60, 80, 0.16);
-}
-
-@media all and (max-height: 500px) {
-  html {
-    font-size: 1.5vw;
-  }
 }

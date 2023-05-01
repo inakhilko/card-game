@@ -3,7 +3,7 @@ const path = require("path");
 const PrettierPlugin = require("webpack-prettier-plugin");
 
 module.exports = {
-  entry: "./main.js",
+  entry: "./src/main.js",
   output: {
     path: path.join(__dirname, "build"),
     filename: "bundle.js",
@@ -42,7 +42,7 @@ module.exports = {
   plugins: [
     new PrettierPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "index.html"),
+      template: path.join(__dirname, "src", "index.html"),
     }),
   ],
 };
