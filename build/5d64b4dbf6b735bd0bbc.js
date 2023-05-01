@@ -68,6 +68,8 @@ function _arrayLikeToArray(e, t) {
   for (var r = 0, n = new Array(t); r < t; r++) n[r] = e[r];
   return n;
 }
+import "./styles.css";
+import "./normalize.css";
 function createNumbersArray(e) {
   for (var t = [], r = 1; r <= (e * e) / 2; r++) t.push(r), t.push(r);
   return t;
@@ -161,11 +163,11 @@ function startGame(e) {
     var s = document.createElement("div");
     s.classList.add("row");
     for (
-      var f = function () {
+      var m = function () {
           var o = document.createElement("div"),
             c = document.createElement("div"),
             i = document.createElement("div"),
-            l = a[d * e + m];
+            l = a[d * e + f];
           (c.innerText = l),
             c.classList.add("front"),
             i.classList.add("back"),
@@ -200,11 +202,11 @@ function startGame(e) {
             o.classList.add("card"),
             s.append(o);
         },
-        m = 0;
-      m < e;
-      m++
+        f = 0;
+      f < e;
+      f++
     )
-      f();
+      m();
     o.append(s);
   }
 }
