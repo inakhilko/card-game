@@ -1,6 +1,6 @@
 {
   "private": true,
-  "main": "build/index.html",
+  "main": "build/bundle.js",
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve --hot",
